@@ -1,6 +1,6 @@
 {
   "name": "nyan-cat-festival",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "~=[,,_,,]:3  Turn your website into a custom nyan cat festival.",
   "main": "dist/index.js",
   "scripts": {

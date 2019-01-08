@@ -1,16 +1,6 @@
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "./assets/mocktrial", "./assets/nyancat"], factory);
-    }
-})(function (require, exports) {
+define(["require", "exports", "./assets/mocktrial", "./assets/nyancat"], function (require, exports, mocktrial_1, nyancat_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const mocktrial_1 = require("./assets/mocktrial");
-    const nyancat_1 = require("./assets/nyancat");
     class Nyan {
         constructor(options) {
             this.song = null;
