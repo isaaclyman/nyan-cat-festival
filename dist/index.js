@@ -124,6 +124,10 @@
                 }
             });
         }
+        stopNyan() {
+            this.resetCats();
+            this.song.pause();
+        }
         checkCompat(logErrors = false) {
             if (!document.querySelector) {
                 if (logErrors) {

@@ -20,8 +20,35 @@ requirejs(['./node_modules/nyan-cat-festival/dist/index'], function ({ default: 
   })
 
   document.getElementById('mocktrial').onclick = function () {
+    haydnNyan.stopNyan()
     mockTrialNyan.nyan()
   }
+
+  const haydnCuesTemplate = [{
+    delay: 0,
+    start: 'left',
+    zIndex: 5
+  }, {
+    delay: 1.5 * 1000,
+    start: 'left-top',
+    zIndex: 5
+  }, {
+    delay: 3 * 1000,
+    start: 'left-bottom',
+    end: 'right-top',
+    rumble: true,
+    transitionDuration: 10 * 1000,
+    transitionTiming: 'ease-in',
+    zIndex: 10
+  }]
+  const haydnCues = Array.from(Array(100).keys()).map(num => {
+    const templateCopy = Object.assign({}, haydnCuesTemplate[num % haydnCuesTemplate.length])
+    const lastIndex = haydnCuesTemplate.length - 1
+    if (num > lastIndex) {
+      templateCopy.delay += Math.floor(num / haydnCuesTemplate.length) * 13 * 1000
+    }
+    return templateCopy
+  })
 
   const haydnNyan = new Nyan({
     rumble: false,
@@ -29,26 +56,11 @@ requirejs(['./node_modules/nyan-cat-festival/dist/index'], function ({ default: 
     transitionDuration: 5 * 1000,
     transitionTiming: 'cubic-bezier(0.0, 0.0, 0.85, 1.0)',
     zIndex: 100,
-    cues: [{
-      delay: 0,
-      start: 'left',
-      zIndex: 5
-    }, {
-      delay: 1500,
-      start: 'left-top',
-      zIndex: 5
-    }, {
-      delay: 3000,
-      start: 'left-bottom',
-      end: 'right-top',
-      rumble: true,
-      transitionDuration: 10 * 1000,
-      transitionTiming: 'ease-in',
-      zIndex: 10
-    }]
+    cues: haydnCues
   })
 
   document.getElementById('haydn').onclick = function() {
+    mockTrialNyan.stopNyan()
     haydnNyan.nyan()
   }
 })

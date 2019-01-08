@@ -128,6 +128,11 @@ export default class Nyan {
     })
   }
 
+  stopNyan(): void {
+    this.resetCats()
+    this.song.pause()
+  }
+
   checkCompat(logErrors: boolean = false): boolean {
     if (!document.querySelector) {
       if (logErrors) {

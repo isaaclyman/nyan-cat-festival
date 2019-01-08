@@ -13,6 +13,7 @@ export default class Nyan {
     private styledPositions;
     constructor(options: NyanOptions);
     nyan(): void;
+    stopNyan(): void;
     checkCompat(logErrors?: boolean): boolean;
     private prepareContext;
     private prepareCats;
