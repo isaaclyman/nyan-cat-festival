@@ -94,6 +94,10 @@ The `cues` option is an array of objects, each of which represents a single nyan
 
 `zIndex`: (optional) The z-index of this specific cat. Keep in mind that z-index can only be used to position cats relative to each other, not to your app, since they exist in a different stacking context. By default, this is 1.
 
+## Troubleshooting
+
+If you try to nyan right when the page loads, the audio won't work on modern browsers due to [autoplay policies](https://developers.google.com/web/updates/2017/09/autoplay-policy-changes). You'll have to nyan in response to a user event (like a click).
+
 ## License
 
 MIT Licensed.
