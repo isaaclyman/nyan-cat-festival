@@ -21,6 +21,7 @@ requirejs(['../dist/index'], function ({ default: Nyan }) {
 
   document.getElementById('mocktrial').onclick = function () {
     haydnNyan.stopNyan()
+    noMusicNyan.stopNyan()
     mockTrialNyan.nyan()
   }
 
@@ -61,6 +62,33 @@ requirejs(['../dist/index'], function ({ default: Nyan }) {
 
   document.getElementById('haydn').onclick = function() {
     mockTrialNyan.stopNyan()
+    noMusicNyan.stopNyan()
     haydnNyan.nyan()
+  }
+
+  const noMusicNyan = new Nyan({
+    song: null,
+    cues: [{
+      delay: 0,
+      start: 'left-top',
+      end: 'right-top',
+      transitionDuration: 5 * 1000
+    }, {
+      delay: 0,
+      start: 'left',
+      end: 'right',
+      transitionDuration: 4.5 * 1000
+    }, {
+      delay: 0,
+      start: 'left-bottom',
+      end: 'right-bottom',
+      transitionDuration: 4 * 1000
+    }]
+  })
+
+  document.getElementById('nomusic').onclick = function() {
+    mockTrialNyan.stopNyan()
+    haydnNyan.stopNyan()
+    noMusicNyan.nyan()
   }
 })

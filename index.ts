@@ -130,7 +130,10 @@ export default class Nyan {
 
   stopNyan(): void {
     this.resetCats()
-    this.song.pause()
+
+    if (this.song) {
+      this.song.pause()
+    }
   }
 
   checkCompat(logErrors: boolean = false): boolean {

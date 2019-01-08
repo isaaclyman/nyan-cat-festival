@@ -126,7 +126,9 @@
         }
         stopNyan() {
             this.resetCats();
-            this.song.pause();
+            if (this.song) {
+                this.song.pause();
+            }
         }
         checkCompat(logErrors = false) {
             if (!document.querySelector) {
