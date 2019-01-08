@@ -1,5 +1,5 @@
 requirejs(['./node_modules/nyan-cat-festival/dist/index'], function ({ default: Nyan }) {
-  const nyan = new Nyan({
+  const mockTrialNyan = new Nyan({
     cues: [{
       delay: 0.25 * 1000,
       start: 'left',
@@ -19,7 +19,36 @@ requirejs(['./node_modules/nyan-cat-festival/dist/index'], function ({ default: 
     }]
   })
 
-  document.getElementById('startmagic').onclick = function () {
-    nyan.nyan()
+  document.getElementById('mocktrial').onclick = function () {
+    mockTrialNyan.nyan()
+  }
+
+  const haydnNyan = new Nyan({
+    rumble: false,
+    song: 'http://www.hochmuth.com/mp3/Haydn_Cello_Concerto_D-1.mp3',
+    transitionDuration: 5 * 1000,
+    transitionTiming: 'cubic-bezier(0.0, 0.0, 0.85, 1.0)',
+    zIndex: 100,
+    cues: [{
+      delay: 0,
+      start: 'left',
+      zIndex: 5
+    }, {
+      delay: 1500,
+      start: 'left-top',
+      zIndex: 5
+    }, {
+      delay: 3000,
+      start: 'left-bottom',
+      end: 'right-top',
+      rumble: true,
+      transitionDuration: 10 * 1000,
+      transitionTiming: 'ease-in',
+      zIndex: 10
+    }]
+  })
+
+  document.getElementById('haydn').onclick = function() {
+    haydnNyan.nyan()
   }
 })
