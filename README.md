@@ -2,6 +2,8 @@
 
 Turn your website into a custom nyan cat festival.
 
+Demo: http://isaaclyman.com/nyan-cat-festival/docs
+
 ~=[,,_,,]:3
 
 Ɛ:[,,_,,]=~
