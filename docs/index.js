@@ -1,4 +1,4 @@
-requirejs(['./node_modules/nyan-cat-festival/dist/index'], function ({ default: Nyan }) {
+requirejs(['../dist/index'], function ({ default: Nyan }) {
   const mockTrialNyan = new Nyan({
     cues: [{
       delay: 0.25 * 1000,
