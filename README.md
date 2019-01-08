@@ -33,7 +33,6 @@ const festival = new Nyan({
 
 // Advanced festival for hacker cats
 const festival = new Nyan({
-  rumble: false,
   song: 'http://www.hochmuth.com/mp3/Haydn_Cello_Concerto_D-1.mp3',
   transitionDuration: 5 * 1000,
   transitionTiming: 'cubic-bezier(0.0, 0.0, 0.85, 1.0)',
@@ -50,7 +49,6 @@ const festival = new Nyan({
     delay: 3000,
     start: 'left-bottom',
     end: 'right-top',
-    rumble: true,
     transitionDuration: 10 * 1000,
     transitionTiming: 'ease-in',
     zIndex: 10
@@ -65,8 +63,6 @@ festival.nyan()
 ```
 
 ### Options
-
-`rumble`: (optional) Determines whether the cats should rumble. By default, this is false.
 
 `song`: (optional) The URL of the song to play in the background, or an HTMLAudioElement object that is ready to play. If this is `null`, no song will be played. By default, this is the theme song for the show *[Mock Trial with J. Reinhold](https://arresteddevelopment.fandom.com/wiki/Mock_Trial_with_J._Reinhold)*.
 
@@ -85,8 +81,6 @@ The `cues` option is an array of objects, each of which represents a single nyan
 `start`: (optional) The position where the cat should begin (off-screen). The 12 possible values, starting at the bottom of the left side and going clockwise, are `'left-bottom'`, `'left'`, `'left-top'`, `'top-left'`, `'top'`, `'top-right'`, `'right-top'`, `'right'`, `'right-bottom'`, `'bottom-right'`, `'bottom'`, `'bottom-left'`. By default, this is `'left'`.
 
 `end`: (optional) The position where the cat should end (off-screen). This accepts the same values as the `start` option. By default, this is `'right'`.
-
-`rumble`: (optional) An override determining whether this specific cat should rumble.
 
 `transitionDuration`: (optional) An override duration to use for this cat's transition.
 
